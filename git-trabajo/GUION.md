@@ -1,6 +1,6 @@
 # Trabajo 1 - Introducción a Git
 Por: **Adrián Pisabarro García**    
-Puedes tener una mejor vista en: 
+Puedes tener una mejor vista en: [https://github.com/adrianpisabarrogarcia/daw-froga-git/blob/master/git-trabajo/GUION.md](https://github.com/adrianpisabarrogarcia/daw-froga-git/blob/master/git-trabajo/GUION.md)
   
 ### 1. Iniciar nuestro Repositorio desde local
 1.- Lo primero es situarnos en la carpeta donde vamos a crear nuestro repositorio git en mi caso: `$ cd Desktop/Git/`.    
