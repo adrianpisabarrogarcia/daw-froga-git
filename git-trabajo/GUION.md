@@ -23,8 +23,8 @@ Y accedemos a ella: `$ cd daw-froga-git/`
 1.- Crear el archivo **adrian.html** y subirlo a la rama master.  
 	`$ nano adrian.html` Creación del archivo **adrian.html**.  
 	`$ git add *` ó `$ git add adrian.html` Añadir a la cola de subida el archivo **adrian.html**.  
-	`$ git commit -m "add file adrian.html to master brach"` Hacer un control de versión.  
-	`$ git push -u origin master` Subir de local a remoto.     
+	`$ git commit -m "add file adrian.html to master branch"` Hacer un control de versión.  
+	`$ git push origin master` Subir de local a remoto.     
    
 ![](./screen2.png)
 
@@ -34,7 +34,7 @@ Y accedemos a ella: `$ cd daw-froga-git/`
 	`$ git nano adrian.html` Hacemos todos los cambios que tenemos que hacer al archivo.   
 	`$ git add *` ó `$ git add adrian.html` Añadir a la cola de subida el archivo **adrian.html**.  
 	`$ git commit -m "v2 file: adrian.html"` Hacer un control de versión.  
-	`$ git push -u origin master` Subir de local a remoto.     
+	`$ git push origin master` Subir de local a remoto.     
 5.- Comprobación de las dos ramas con los dos archivos diferenciados: 
    
 ![](./screen3.png)
@@ -54,7 +54,7 @@ Y accedemos a ella: `$ cd daw-froga-git/`
 1.- Primero vamos a localizar el id del cambio con: `$ git log` yo voy a escoger este id: `492233ddcae0faaa063a5b71792b7d991a8113e7` ó `492233d`. Podemos utilizar para no tener tanto texto la opción de `$ git log --oneline | cat`. En este primer paso también podemos hacer uso del `git reset --hard HEAD~n` donde n indica el numero de commit anteriores. Por cierto si inlcuimos el --hard no haría falta hacer un add o un commit, si no lo incluimos sí.    
 <pre>
 492233d v2 file: adrian.html
-6a5765f add file adrian.html to master brach
+6a5765f add file adrian.html to master branch
 acff3d5 add README.md
 </pre>
 2.- Hacemos un reset del commit específico: `$ git reset 492233ddcae0faaa063a5b71792b7d991a8113e7` en este momento nuestro cambio estará en el stage, habrá que hacer un add, un commit, un merge y posteriormente un push por no haber añadido el *--hard*.
@@ -62,8 +62,8 @@ acff3d5 add README.md
 
 **Opción 2: GIT CHECKOUT**  
 1.- `$ git log` para saber cual va a ser nuestro id en este caso será: `b691cfe951644e2d88c651038dcea29c188075bb`.  
-2.- Ahora nos situaremos en la rama que estara nuestro puntero HEAD: `$ git checkout b691cfe951644e2d88c651038dcea29c188075bb`.   
-3.- Nos damos cuenta como el puntero HEAD se ha colocado y ha revertido los cambios, pero hay que hacer efectivos los cambios para ello utilizamos un add, commit, merge y un push. 
+2.- Ahora nos situaremos en la rama que estara nuestro puntero HEAD: `$ git checkout b691cfe951644e2d88c651038dcea29c188075bb .`.   
+3.- En estos momentos nuestro repo ya habrá sufrifo los cambios al haber puesto el punto, faltaría subir los cambios. 
 
 **Opción 3: GIT REVERT**     
 Parecido al `$ git reset` pero compara archivos como si hiciera un `$ git diff archivo1 archivo2`.  
@@ -71,7 +71,7 @@ Parecido al `$ git reset` pero compara archivos como si hiciera un `$ git diff a
 **¿Qué diferencia hay?**   
    
 * Cuando utilizamos el `$ git reset --hard HEAD~n` lo que hace es identificar cual es el el commit n numeros atrás y añadimos una nueva rama que la tendremos que poner en nuestra rama final. Mueves un puntero llamado *HEAD* a un momento específico.    	
-* Cuando utilizamos el `$ git head id-log` directamente identificamos y marcamos a que versión se va a revertir.
+* Cuando utilizamos el `$ git checkout id-log .` directamente identificamos y marcamos a que versión se va a revertir.
 
 ### 5. Crear una subrama
 Vamos a imitar esta imagen solo que cambiando la llamada "Experimental" por "test" y "otra rama" por "sub-test":       
